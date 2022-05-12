@@ -1,14 +1,13 @@
-import { ResourceResolver } from './query';
 import { ResourcesLoader } from './dataloader';
+import { ResourceResolver } from './query';
 
 export const ResourceGraphQLServices = [
-  // Queries
-  ResourceResolver,
-
   // DataLoaders
   ResourcesLoader,
+
+  // Queries
+  ResourceResolver,
 ];
 
 export * from './dataloader';
 export * from './dto';
-export * from './query';
