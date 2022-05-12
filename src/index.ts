@@ -1,3 +1,1 @@
-import ResourceResolvers from './resource';
-
-export default [...ResourceResolvers];
+export * from './resource';
