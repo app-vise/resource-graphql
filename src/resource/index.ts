@@ -1,7 +1,7 @@
-import { ResourceResolver } from './queries';
-import { ResourcesLoader } from './dataloader/resource.loader';
+import { ResourceResolver } from './query';
+import { ResourcesLoader } from './dataloader';
 
-export default [
+export const ResourceGraphQLServices = [
   // Queries
   ResourceResolver,
 
@@ -9,6 +9,6 @@ export default [
   ResourcesLoader,
 ];
 
-// Must be exported for the enum to be registered in GraphQL schema
-export * from './dto/mime-type.enum';
-export * from './dto/resource-type.enum';
+export * from './dataloader';
+export * from './dto';
+export * from './query';
