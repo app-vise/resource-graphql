@@ -9,3 +9,5 @@ export class ResourceResolver extends NodeQuery(
   ResourceQuery,
   'resource'
 ) {}
+
+export * from './resources.resolver';
