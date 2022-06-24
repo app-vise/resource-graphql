@@ -1,4 +1,4 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, GraphQLISODateTime, ObjectType } from '@nestjs/graphql';
 import { Resource, MimeType, ResourceType } from '@appvise/resource';
 import { BaseNode } from '@appvise/graphql';
 
@@ -22,6 +22,12 @@ export class ResourceNode extends BaseNode {
   @Field()
   url: string;
 
+  @Field(() => GraphQLISODateTime, {
+    description:
+      'Timestamp as to when this entity was last mutated (either in offline or online mode)',
+  })
+  mutatedAt: Date;
+
   constructor(resource: Resource) {
     super(resource);
 
@@ -31,5 +37,6 @@ export class ResourceNode extends BaseNode {
     this.size = resource.file.size;
     this.public = resource.file.public;
     this.url = resource.file.url ?? `/resources/${resource.id.value}`;
+    this.mutatedAt = resource.mutatedAt.value;
   }
 }
