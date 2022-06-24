@@ -1,6 +1,10 @@
 import { Field, InputType } from '@nestjs/graphql';
 import { FilterType } from '@appvise/domain';
-import { NumericFilterInput, StringFilterInput } from '@appvise/graphql';
+import {
+  DateTimeFilterInput,
+  NumericFilterInput,
+  StringFilterInput,
+} from '@appvise/graphql';
 
 @InputType()
 export class ResourcesFilter implements FilterType {
@@ -21,6 +25,15 @@ export class ResourcesFilter implements FilterType {
 
   @Field(() => NumericFilterInput, { nullable: true })
   size?: NumericFilterInput;
+
+  @Field(() => DateTimeFilterInput, { nullable: true })
+  createdAt?: DateTimeFilterInput;
+
+  @Field(() => DateTimeFilterInput, { nullable: true })
+  updatedAt?: DateTimeFilterInput;
+
+  @Field(() => DateTimeFilterInput, { nullable: true })
+  mutatedAt?: DateTimeFilterInput;
 
   @Field(() => [ResourcesFilter], {
     nullable: true,
