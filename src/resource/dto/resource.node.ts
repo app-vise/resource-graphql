@@ -23,10 +23,15 @@ export class ResourceNode extends BaseNode {
   url: string;
 
   @Field(() => GraphQLISODateTime, {
-    description:
-      'Timestamp as to when this entity was last mutated (either in offline or online mode)',
+    description: 'Timestamp as to when this entity was created in offline mode',
   })
-  mutatedAt: Date;
+  clientCreatedAt: Date;
+
+  @Field(() => GraphQLISODateTime, {
+    description:
+      'Timestamp as to when this entity was last updated in offline mode',
+  })
+  clientUpdatedAt: Date;
 
   constructor(resource: Resource) {
     super(resource);
@@ -37,6 +42,7 @@ export class ResourceNode extends BaseNode {
     this.size = resource.file.size;
     this.public = resource.file.public;
     this.url = resource.file.url ?? `/resources/${resource.id.value}`;
-    this.mutatedAt = resource.mutatedAt.value;
+    this.clientCreatedAt = resource.clientCreatedAt.value;
+    this.clientUpdatedAt = resource.clientUpdateAt.value;
   }
 }

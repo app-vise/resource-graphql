@@ -33,7 +33,10 @@ export class ResourcesFilter implements FilterType {
   updatedAt?: DateTimeFilterInput;
 
   @Field(() => DateTimeFilterInput, { nullable: true })
-  mutatedAt?: DateTimeFilterInput;
+  clientCreatedAt?: DateTimeFilterInput;
+
+  @Field(() => DateTimeFilterInput, { nullable: true })
+  clientUpdatedAt?: DateTimeFilterInput;
 
   @Field(() => [ResourcesFilter], {
     nullable: true,
