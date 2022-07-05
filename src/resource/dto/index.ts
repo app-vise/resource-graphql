@@ -1,5 +1,6 @@
 export * from './mime-type.enum';
 export * from './resource.node';
+export * from './resource-parent-type.enum';
 export * from './resource-type.enum';
 export * from './resources.connection';
 export * from './resources.filter';
