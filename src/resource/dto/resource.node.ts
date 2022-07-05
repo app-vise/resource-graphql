@@ -26,8 +26,8 @@ export class ResourceNode extends BaseNode {
   @Field({ nullable: true })
   parentId?: string;
 
-  @Field(() => ResourceType)
-  parentType: ResourceParentType;
+  @Field(() => ResourceType, { nullable: true })
+  parentType?: ResourceParentType;
 
   @Field(() => GraphQLISODateTime, {
     description: 'Timestamp as to when this entity was created in offline mode',
