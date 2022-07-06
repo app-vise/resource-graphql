@@ -30,7 +30,7 @@ export class ResourceNode extends BaseNode {
   @Field({ nullable: true })
   parentId?: string;
 
-  @Field(() => ResourceType, { nullable: true })
+  @Field(() => ResourceParentType, { nullable: true })
   parentType?: ResourceParentType;
 
   @Field(() => GraphQLISODateTime, {
