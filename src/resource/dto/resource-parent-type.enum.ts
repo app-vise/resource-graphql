@@ -1,7 +1,6 @@
 import { registerEnumType } from '@nestjs/graphql';
 
-// Import ResourceParentType from config to allow each implementing application to define their own types
-import { ResourceParentType } from '@config/appvise/resource';
+import { ResourceParentType } from '@appvise/resource';
 
 export { ResourceParentType };
 
