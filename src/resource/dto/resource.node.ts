@@ -1,7 +1,11 @@
 import { Field, GraphQLISODateTime, ObjectType } from '@nestjs/graphql';
-import { Resource, MimeType, ResourceType } from '@appvise/resource';
+import {
+  Resource,
+  MimeType,
+  ResourceParentType,
+  ResourceType,
+} from '@appvise/resource';
 import { BaseNode } from '@appvise/graphql';
-import { ResourceParentType } from '.';
 
 @ObjectType('Resource')
 export class ResourceNode extends BaseNode {
