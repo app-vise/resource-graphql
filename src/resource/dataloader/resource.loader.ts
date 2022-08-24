@@ -13,6 +13,7 @@ export class ResourcesLoader {
   public readonly batch = new DataLoader(
     async (resourceIds: readonly string[]) => {
       const request = new ResourcesRequest();
+      request.first = 10000;
       request.filter = {
         OR: resourceIds.map((resourceId) => {
           return { id: { equals: resourceId } };
