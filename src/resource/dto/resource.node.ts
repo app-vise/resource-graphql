@@ -33,6 +33,9 @@ export class ResourceNode extends BaseNode {
   @Field(() => ResourceParentType, { nullable: true })
   parentType?: ResourceParentType;
 
+  @Field()
+  creatorId: string;
+
   @Field(() => GraphQLISODateTime, {
     description: 'Timestamp as to when this entity was created in offline mode',
   })
@@ -55,6 +58,7 @@ export class ResourceNode extends BaseNode {
     this.url = resource.file.url ?? `/resources/${resource.id.value}`;
     this.parentId = resource.parentId ? resource.parentId.value : undefined;
     this.parentType = resource.parentType;
+    this.creatorId = resource.creatorId.value;
     this.clientCreatedAt = resource.clientCreatedAt.value;
     this.clientUpdatedAt = resource.clientUpdatedAt.value;
   }

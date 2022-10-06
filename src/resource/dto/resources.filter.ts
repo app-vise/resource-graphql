@@ -26,6 +26,9 @@ export class ResourcesFilter implements FilterType {
   @Field(() => NumericFilterInput, { nullable: true })
   size?: NumericFilterInput;
 
+  @Field(() => StringFilterInput, { nullable: true })
+  creatorId?: StringFilterInput;
+
   @Field(() => DateTimeFilterInput, { nullable: true })
   createdAt?: DateTimeFilterInput;
 
